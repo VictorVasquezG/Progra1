@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace adivinar_fecha_cumpleaños
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int resultado, fecha;
+            string seguir;
+
+            do { 
+            Console.Write("BIENVENIDOS AL JUEGO DE ADIVINAR LA FECHA DE CUMPLEAÑOS");
+            Console.WriteLine("\n1.Ten en mente el dia en que naciste.");
+            Console.WriteLine("2.Ahora multiplicalo por veinte.");
+            Console.WriteLine("3.Suma el resultado con setenta y tres.");
+            Console.WriteLine("4.Multiplica el resultado por cinco.");
+            Console.WriteLine("5.Al resultado sumale la fecha del mes de cumpleaños.");
+            Console.WriteLine("6.Brindame el resultado:");
+            resultado = int.Parse(Console.ReadLine()); 
+            fecha = resultado - 365;
+
+            Console.Write("La fecha de tu cumpleaños es:" +fecha);
+
+                Console.Write("\n¿Desea volver a intentar s/n ?");
+                seguir = Console.ReadLine();
+
+                while (seguir != "s" && seguir != "n")
+                {
+                    Console.Write("\n¿Desea volver a intentar s/n ?");
+                    seguir = Console.ReadLine();
+                }
+            } while (seguir == "s");
+
+            Console.ReadKey();
+        }
+    }
+}
