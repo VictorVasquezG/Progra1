@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace metodo_adivinar
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int numero;
+            string result, seguir;
+
+            Console.Write("BIENVENIDOS A ADIVINA EL NUMERO");
+
+            do
+            {
+
+                Console.Write("\n1-.Piensa un numero.");
+                Console.ReadLine();
+
+                Console.Write("2-.Multiplica el numero por dos.");
+                Console.ReadLine();
+
+                Console.Write("3-.Sumale ocho.");
+                Console.ReadLine();
+
+                Console.Write("4-.Multiplica el resultado por cinco.");
+                Console.ReadLine();
+
+                Console.Write("5-.Brindame el resultado final:");
+                result = Console.ReadLine();
+                result= result.Remove(result.Length-1);
+                numero = int.Parse(result);
+                numero = numero - 4;
+
+                Console.Write("El numero que pensaste es:" + numero);
+                
+                Console.Write("\n¿Desea volver a intentar s/n ?");
+                seguir = Console.ReadLine();
+
+                while (seguir != "s" && seguir != "n")
+                {
+                    Console.Write("\n¿Desea volver a intentar s/n ?");
+                    seguir = Console.ReadLine();
+                }
+            } while (seguir == "s");
+
+            Console.ReadKey();
+        }
+    }
+}
